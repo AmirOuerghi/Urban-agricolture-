@@ -5,7 +5,7 @@ const bodyParser = require('body-parser');
 
 
 
-
+app.use('/api', userRoutes); 
 
 const app = express();
 const corsOptions = {
