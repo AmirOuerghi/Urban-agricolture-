@@ -4,14 +4,28 @@ const config = require('./config');
 // Create MySQL connection pool
 const pool = mysql.createPool(config);
 
-const connection = mysql.createConnection(config)
-connection.connect((err)=>{
-    if (err) {
-        console.log(err)
-    }
-    else {
-        console.log("MYSQL connected")
-    }
-})
+// Ensure the database is created or already exists
+pool.getConnection((err, connection) => {
+  if (err) {
+    console.log(err);
+  } else {
+    console.log("MYSQL connected");
+
+    // Create database query
+    const createDbQuery = 'CREATE DATABASE IF NOT EXISTS DbFarm';
+
+    connection.query(createDbQuery, (error, results) => {
+      if (error) {
+        console.log(error);
+      } else {
+        console.log("Database created or already exists");
+      }
+
+      // Release the connection back to the pool
+      connection.release();
+    });
+  }
+});
+
 // Export the pool for use in other modules
-module.exports = pool.promise(),connection;
+module.exports = pool.promise();
