@@ -7,7 +7,8 @@ const cors = require('cors');
 const app = express();
 const server = http.createServer(app);
 const io = socketIo(server);
-const farmingEquipmentRoutes = require('./routes/farmingEquipmentRoutes');
+const farmingEquipmentRoutes = require('../routes/farmingequipmentRoutes');
+const userRoutes = require('../routes/userRoutes'); 
 
 const PORT = process.env.PORT || 3000;
 
