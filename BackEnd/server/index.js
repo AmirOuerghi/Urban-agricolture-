@@ -7,6 +7,10 @@ const cors = require('cors');
 const app = express();
 const server = http.createServer(app);
 const io = socketIo(server);
+const farmingEquipmentRoutes = require('./routes/farmingEquipmentRoutes');
+
+const PORT = process.env.PORT || 3000;
+
 
 app.use(bodyParser.json());
 app.use(cors());
@@ -38,7 +42,12 @@ io.on('connection', (socket) => {
   });
 });
 
-const PORT = process.env.PORT || 3001;
 server.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
+  console.log(`Server running on port ${PORT}`)});
+app.use('/api/users', userRoutes); 
+app.use('/api/farmingequipment', farmingEquipmentRoutes);
+
+
+app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}`);
 });

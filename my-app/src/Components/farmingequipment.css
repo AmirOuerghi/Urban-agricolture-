@@ -1,0 +1,75 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-image: url('https://ik.imagekit.io/efarm/website/combine_harvesting_in_sunset_4ff3ab43db.jpg?tr=w-900');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.navbar {
+    background-color: #FFD700; 
+    border-radius: 27px; 
+    padding: 1.5rem; /* Increased padding */
+}
+
+.navbar-brand {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #05386b;
+}
+
+.nav-link {
+    color: #052e58;
+    font-weight: bold;
+    transition: all 0.3s ease-in-out;
+    padding: 1rem 1rem; 
+}
+
+.nav-link:hover {
+    color: #FFF;
+    background-color: #05386b;
+    border-radius: 20px; 
+}
+
+.navbar-nav .nav-link {
+    margin-right: 7px; 
+}
+
+.card {
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: rgba(255, 255, 255, 0.8); 
+    border-radius: 10px; 
+}
+
+.card-img-top {
+    max-height: 200px;
+    object-fit: cover;
+}
+
+.card-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #05386b;
+}
+
+.card-text {
+    color: #333;
+}
+
+.footer {
+    background-color: #8ee4af;
+    padding: 20px 0;
+    text-align: center;
+    color: #05386b;
+}
+
+.footer p {
+    margin-bottom: 0;
+}
