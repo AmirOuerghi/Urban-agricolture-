@@ -1,26 +1,20 @@
 const cors = require('cors');
 const express = require('express');
 const bodyParser = require('body-parser');
-
-
-
-
-app.use('/api', userRoutes); 
+const farmingEquipmentRoutes = require('./routes/farmingEquipmentRoutes');
 
 const app = express();
-const corsOptions = {
-  origin: 'http://localhost:3000/', // Replace with your frontend URL
-  credentials: true,
-};
+const PORT = process.env.PORT || 3000;
+
 
 app.use(bodyParser.json());
-app.use(cors(corsOptions));
+app.use(cors());
 
 
+app.use('/api/users', userRoutes); 
+app.use('/api/farmingequipment', farmingEquipmentRoutes);
 
 
-
-const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
