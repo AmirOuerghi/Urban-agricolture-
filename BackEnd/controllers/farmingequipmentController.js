@@ -1,8 +1,8 @@
-const FarmingEquipment = require('../model/farmingequipmentModel');
+const FarmEquipment = require('../model/farmingequipmentModel');
 
 exports.createEquipment = async (req, res) => {
   try {
-    const equipment = await FarmingEquipment.create(req.body);
+    const equipment = await FarmEquipment.create(req.body);
     res.status(201).json(equipment);
   } catch (err) {
     res.status(500).json({ message: err.message });
@@ -11,7 +11,7 @@ exports.createEquipment = async (req, res) => {
 
 exports.getAllEquipment = async (req, res) => {
   try {
-    const equipment = await FarmingEquipment.getAll();
+    const equipment = await FarmEquipment.getAll();
     res.status(200).json(equipment);
   } catch (err) {
     res.status(500).json({ message: err.message });
@@ -21,7 +21,7 @@ exports.getAllEquipment = async (req, res) => {
 exports.getEquipmentById = async (req, res) => {
   try {
     const { id } = req.params;
-    const equipment = await FarmingEquipment.getById(id);
+    const equipment = await FarmEquipment.getById(id);
     if (!equipment) {
       return res.status(404).json({ message: 'Equipment not found' });
     }
@@ -34,11 +34,11 @@ exports.getEquipmentById = async (req, res) => {
 exports.updateEquipmentById = async (req, res) => {
   try {
     const { id } = req.params;
-    const equipment = await FarmingEquipment.getById(id);
+    const equipment = await FarmEquipment.getById(id);
     if (!equipment) {
       return res.status(404).json({ message: 'Equipment not found' });
     }
-    const updatedEquipment = await FarmingEquipment.updateById(id, req.body);
+    const updatedEquipment = await FarmEquipment.updateById(id, req.body);
     res.status(200).json(updatedEquipment);
   } catch (err) {
     res.status(500).json({ message: err.message });
@@ -48,7 +48,7 @@ exports.updateEquipmentById = async (req, res) => {
 exports.deleteEquipmentById = async (req, res) => {
   try {
     const { id } = req.params;
-    await FarmingEquipment.deleteById(id);
+    await FarmEquipment.deleteById(id);
     res.status(204).end();
   } catch (err) {
     res.status(500).json({ message: err.message });
