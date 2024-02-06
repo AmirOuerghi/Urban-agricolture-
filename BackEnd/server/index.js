@@ -1,26 +1,44 @@
-const cors = require('cors');
 const express = require('express');
+const http = require('http');
+const socketIo = require('socket.io');
 const bodyParser = require('body-parser');
-
-
-
-
-app.use('/api', userRoutes); 
+const cors = require('cors');
 
 const app = express();
-const corsOptions = {
-  origin: 'http://localhost:3000/', // Replace with your frontend URL
-  credentials: true,
-};
+const server = http.createServer(app);
+const io = socketIo(server);
 
 app.use(bodyParser.json());
-app.use(cors(corsOptions));
+app.use(cors());
 
+// Chatroom array to store messages
+let chatroom = [];
 
+// Endpoint to get chatroom messages
+app.get('/api/chatroom', (req, res) => {
+  res.json(chatroom);
+});
 
+// Endpoint to send a new message to the chatroom
+app.post('/api/chatroom', (req, res) => {
+  const { message } = req.body;
+  chatroom.push(message);
+  io.emit('message', message); // Emit the new message to all connected clients
+  res.status(201).send('Message sent to chatroom');
+});
 
+io.on('connection', (socket) => {
+  console.log('A user connected');
 
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
+  // Send chat history to newly connected client
+  socket.emit('chatHistory', chatroom);
+
+  socket.on('disconnect', () => {
+    console.log('User disconnected');
+  });
+});
+
+const PORT = process.env.PORT || 3001;
+server.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
 });

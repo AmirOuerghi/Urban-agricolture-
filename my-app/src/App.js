@@ -1,10 +1,11 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import ChatRoom from './Components/ChatRoom'; // Import the ChatRoom component
 
 function App() {
   return (
-    <div className="App">
-hello
+    <div>
+      <h1>My Chat Application</h1>
+      <ChatRoom /> {/* Render the ChatRoom component */}
     </div>
   );
 }
