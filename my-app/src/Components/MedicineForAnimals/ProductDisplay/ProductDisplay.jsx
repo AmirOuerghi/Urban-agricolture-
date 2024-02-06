@@ -26,7 +26,6 @@ import { ShopContext } from '../../../Context/ShopContext'
                 <img src={star_icon} alt="" />
                 <img src={star_icon} alt="" />
                 <img src={star_dull_icon} alt="" />
-                <p>(100%)</p> 
             </div>
             <div className="productdisplay-right-prices">
                 <div className="productdisplay-right-price-new">{product.new_price}DT</div>
@@ -36,7 +35,6 @@ import { ShopContext } from '../../../Context/ShopContext'
             </div>
             <button onClick={()=>{addToCart(product.id)}}>ADD TO CART</button>
             <p className='productdisplay-right-category'><span>Category :</span> {product.category}</p>
-
         </div>
     </div>
   )
