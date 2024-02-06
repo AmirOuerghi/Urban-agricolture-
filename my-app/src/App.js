@@ -11,7 +11,7 @@ import chicken_banner from './Components/MedicineForAnimals/Assets/chicken_banne
 import horse_banner from './Components/MedicineForAnimals/Assets/horse_banner.png'
 import donkey_banner from './Components/MedicineForAnimals/Assets/donkey_banner.png'
 import dog_banner from './Components/MedicineForAnimals/Assets/dog_banner.png'
-
+import ChatRoom from './Components/ChatRoom'
 
 function App() {
   return (
@@ -32,6 +32,7 @@ function App() {
       <Route path='/cart' element={<Cart/>}/>
     </Routes>
     <Footer/>
+    <ChatRoom/>
     </BrowserRouter>
   </div>
   );

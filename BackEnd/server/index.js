@@ -7,8 +7,8 @@ const cors = require('cors');
 const app = express();
 const server = http.createServer(app);
 const io = socketIo(server);
-const farmingEquipmentRoutes = require('./routes/farmingEquipmentRoutes');
-
+const farmingEquipmentRoutes = require('../routes/farmingEquipmentRoutes');
+const userRoutes = require('../routes/userRoutes')
 const PORT = process.env.PORT || 3000;
 
 
@@ -45,7 +45,7 @@ io.on('connection', (socket) => {
 server.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`)});
 app.use('/api/users', userRoutes); 
-app.use('/api/farmingequipment', farmingEquipmentRoutes);
+//app.use('/api/farmingequipment', farmingEquipmentRoutes);
 
 
 app.listen(PORT, () => {
