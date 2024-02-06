@@ -1,9 +1,12 @@
+/* General styles */
 body {
     font-family: 'Arial', sans-serif;
     background-image: url('https://ik.imagekit.io/efarm/website/combine_harvesting_in_sunset_4ff3ab43db.jpg?tr=w-900');
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
+    margin: 0;
+    padding: 0;
 }
 
 .container {
@@ -12,40 +15,84 @@ body {
     padding: 20px;
 }
 
+/* Navbar styles */
 .navbar {
-    background-color: #FFD700; 
-    border-radius: 27px; 
-    padding: 1.5rem; /* Increased padding */
+    background-color: #34c4c3; /* Turquoise background */
+    padding: 20px; /* Padding for the navbar */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add box shadow */
+    position: fixed; /* Fixed position */
+    width: 200px; /* Set width of navbar */
+    z-index: 1000; /* Higher z-index for stacking */
+    border-radius: 20px; /* Add border radius */
+    left: 0; /* Move navbar to the left */
 }
 
 .navbar-brand {
     font-size: 1.5rem;
     font-weight: bold;
-    color: #05386b;
+    color: #fff; /* White text color */
+    text-transform: uppercase;
+    margin-bottom: 20px; /* Add bottom margin */
+    display: block; /* Display as block element */
+    text-align: center; /* Center align text */
+}
+
+.navbar-nav {
+    list-style: none; /* Remove default list styles */
+    padding: 0; /* Remove default padding */
+    margin: 0; /* Remove default margin */
+}
+
+.nav-item {
+    margin-bottom: 10px; /* Add bottom margin */
 }
 
 .nav-link {
-    color: #052e58;
+    color: #fff; /* White text color */
     font-weight: bold;
-    transition: all 0.3s ease-in-out;
-    padding: 1rem 1rem; 
+    text-transform: uppercase;
+    text-decoration: none; /* Remove default underline */
+    display: block; /* Display as block element */
+    padding: 10px 20px; /* Add padding */
+    border-radius: 10px; /* Add border radius */
+    transition: background-color 0.3s; /* Smooth transition */
 }
 
 .nav-link:hover {
-    color: #FFF;
-    background-color: #05386b;
-    border-radius: 20px; 
+    background-color: #ffd700; /* Yellow background color on hover */
 }
 
-.navbar-nav .nav-link {
-    margin-right: 7px; 
+/* Search bar styles */
+.search-bar {
+    width: 100%; /* Set width of the search bar */
+    padding: 0.5rem; /* Add padding */
+    border-radius: 20px; /* Add border-radius */
+    border: 1px solid #ccc; /* Add border */
+    background-color: transparent; /* Transparent background color */
+    color: #fff; /* White text color */
+    margin-bottom: 20px; /* Add bottom margin */
 }
 
+.search-bar:focus {
+    outline: none; /* Remove outline on focus */
+    border-color: #ffd700; /* Yellow border color on focus */
+}
+
+/* Card styles */
 .card {
     margin-bottom: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    background-color: rgba(255, 255, 255, 0.8); 
-    border-radius: 10px; 
+    background-color: rgba(255, 255, 255, 0.8); /* Added background color */
+    border-radius: 10px;
+    width: calc(33.33% - 20px); /* Set width to 33.33% for 3 cards in a row with spacing */
+    margin-right: 20px; /* Add right margin for spacing between cards */
+    float: left;
+    margin-bottom: 20px;
+    transition: transform 0.3s ease-in-out; /* Smooth transition */
+}
+
+.card:last-child {
+    margin-right: 0;
 }
 
 .card-img-top {
@@ -63,6 +110,11 @@ body {
     color: #333;
 }
 
+.card:hover {
+    transform: translateY(-5px); /* Move the card up on hover */
+}
+
+/* Footer styles */
 .footer {
     background-color: #8ee4af;
     padding: 20px 0;

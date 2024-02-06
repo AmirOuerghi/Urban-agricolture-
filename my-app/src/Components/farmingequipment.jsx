@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { Card, CardGroup, Navbar, Nav } from 'react-bootstrap'; 
+import { Card, CardGroup, Navbar, Nav, Form, FormControl, Button } from 'react-bootstrap'; 
 import './farmingequipment.css';
 
 const FarmingEquipment = () => {
@@ -10,7 +10,7 @@ const FarmingEquipment = () => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await axios.get('http://localhost:5000/api/farminventory');
+                const response = await axios.get('http://localhost:3000/api/farmingequipment/');
                 setData(response.data);
             } catch (error) {
                 console.log(`Error: ${error}`);
@@ -40,21 +40,25 @@ const FarmingEquipment = () => {
                         <Nav.Link onClick={() => setSelectedType('livestock')}>Livestock Equipment</Nav.Link>
                         <Nav.Link onClick={() => setSelectedType('storage')}>Storage & Handling Equipment</Nav.Link>
                     </Nav>
+                    <Form inline>
+                        <FormControl type="text" placeholder="Search" className="mr-sm-2" />
+                        <Button variant="outline-success">Search</Button>
+                    </Form>
                 </Navbar.Collapse>
             </Navbar>
 
             <CardGroup>
                 {filterEquipmentByType().map((equipment, index) => (
                     <Card key={index}>
-                        <Card.Img variant="top" src={equipment.imageUrl} />
+                        <Card.Img variant="top" src={equipment.ImageURL} />
                         <Card.Body>
-                            <Card.Title>{equipment.name}</Card.Title>
+                            <Card.Title>{equipment.Name}</Card.Title>
                             <Card.Text>
-                                <p><strong>Type:</strong> {equipment.type}</p>
-                                <p><strong>Size:</strong> {equipment.size}</p>
-                                <p><strong>Dimensions:</strong> {equipment.dimensions}</p>
-                                <p><strong>Capacity:</strong> {equipment.capacity}</p>
-                                <p><strong>Description:</strong> {equipment.description}</p>
+                                <p><strong>Type:</strong> {equipment.Type}</p>
+                                <p><strong>Size:</strong> {equipment.Size}</p>
+                                <p><strong>Dimensions:</strong> {equipment.Dimensions}</p>
+                                <p><strong>Capacity:</strong> {equipment.Capacity}</p>
+                                <p><strong>Description:</strong> {equipment.Description}</p>
                             </Card.Text>
                         </Card.Body>
                     </Card>
