@@ -1,10 +1,10 @@
-import logo from './logo.svg';
-import './App.css';
-import FarmingEquipment from './Components/farmingequipment'
+import React from 'react';
+import LoginPage from './Components/LoginPage';
+
 function App() {
   return (
-    <div className="App">
-<FarmingEquipment/>
+    <div>
+      <LoginPage />
     </div>
   );
 }

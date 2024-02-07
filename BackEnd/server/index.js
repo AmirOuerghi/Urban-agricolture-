@@ -3,12 +3,12 @@ const http = require('http');
 const socketIo = require('socket.io');
 const bodyParser = require('body-parser');
 const cors = require('cors');
-
+const userRoutes = require('../routes/userRoutes');
 const app = express();
 const server = http.createServer(app);
 const io = socketIo(server);
 const farmingEquipmentRoutes = require('../routes/farmingequipmentRoutes');
-const userRoutes = require('../routes/userRoutes'); 
+
 
 const PORT = process.env.PORT || 3000;
 
@@ -21,6 +21,10 @@ let chatroom = [];
 app.get('/api/chatroom', (req, res) => {
   res.json(chatroom);
 });
+
+app.use('/api/users', userRoutes); 
+// app.use('/api/farmingequipment', farmingEquipmentRoutes);
+
 
 
 app.post('/api/chatroom', (req, res) => {
@@ -40,9 +44,11 @@ io.on('connection', (socket) => {
   });
 });
 
+
 app.use('/api/users', userRoutes); 
 app.use('/api/farmingequipment', farmingEquipmentRoutes);
 
-server.listen(PORT, () => {
+
+app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
