@@ -23,7 +23,7 @@ const FarmingEquipment = () => {
 
     const fetchData = async () => {
         try {
-            const response = await axios.get('http://localhost:3000/api/farmingequipment/');
+            const response = await axios.get('http://localhost:8000/api/farmingequipment/');
             setData(response.data);
         } catch (error) {
             console.log(`Error: ${error}`);
@@ -46,7 +46,7 @@ const FarmingEquipment = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            await axios.post('http://localhost:3000/api/farmingequipment/', formData);
+            await axios.post('http://localhost:8000/api/farmingequipment/', formData);
             fetchData();
             setFormData({
                 Name: '',
