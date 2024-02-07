@@ -14,7 +14,7 @@ export const Navbar = () => {
     return (
     <div className='navbar'>
         <div className="nav-logo">
-            <p className='p'>MedicineForAnimals </p>
+            <p className='p'>MedicineForAnimals🇹🇳</p>
           
         </div>
         <ul className='nav-menu'>

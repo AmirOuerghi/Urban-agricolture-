@@ -1,9 +1,12 @@
+/* Global styles */
 body {
     font-family: 'Arial', sans-serif;
     background-image: url('https://ik.imagekit.io/efarm/website/combine_harvesting_in_sunset_4ff3ab43db.jpg?tr=w-900');
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
+    margin: 0;
+    padding: 0;
 }
 
 .container {
@@ -12,40 +15,87 @@ body {
     padding: 20px;
 }
 
+/* Navbar styles */
 .navbar {
-    background-color: #FFD700; 
-    border-radius: 27px; 
-    padding: 1.5rem; /* Increased padding */
+    background-color: #34c4c3;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+    border-radius: 20px;
+    left: 0;
 }
 
 .navbar-brand {
     font-size: 1.5rem;
     font-weight: bold;
-    color: #05386b;
+    color: #fff;
+    text-transform: uppercase;
+    display: block;
+    text-align: center;
+}
+
+.navbar-nav {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-item {
+    margin-bottom: 10px;
 }
 
 .nav-link {
-    color: #052e58;
+    color: #fff;
     font-weight: bold;
-    transition: all 0.3s ease-in-out;
-    padding: 1rem 1rem; 
+    text-transform: uppercase;
+    text-decoration: none;
+    display: block;
+    padding: 10px 20px;
+    border-radius: 10px;
+    transition: background-color 0.3s;
 }
 
 .nav-link:hover {
-    color: #FFF;
-    background-color: #05386b;
-    border-radius: 20px; 
+    background-color: #ffd700;
 }
 
-.navbar-nav .nav-link {
-    margin-right: 7px; 
+/* Search bar styles */
+.search-bar {
+    width: 100%;
+    padding: 0.5rem;
+    border-radius: 20px;
+    border: 1px solid #ccc;
+    background-color: transparent;
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+.search-bar:focus {
+    outline: none;
+    border-color: #ffd700;
+}
+
+/* Card styles */
+.card-container {
+    margin-top: 100px; /* Add top margin to card container */
 }
 
 .card {
-    margin-bottom: 20px;
+    margin-bottom: 40px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    background-color: rgba(255, 255, 255, 0.8); 
-    border-radius: 10px; 
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    width: calc(33.33% - 20px);
+    margin-right: 20px;
+    float: left;
+    margin-bottom: 20px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.card:last-child {
+    margin-right: 0;
 }
 
 .card-img-top {
@@ -63,6 +113,11 @@ body {
     color: #333;
 }
 
+.card:hover {
+    transform: translateY(-5px);
+}
+
+/* Footer styles */
 .footer {
     background-color: #8ee4af;
     padding: 20px 0;
@@ -73,3 +128,53 @@ body {
 .footer p {
     margin-bottom: 0;
 }
+
+
+.form-container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+.form-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #05386b;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-control {
+    width: 100%;
+    padding: 20px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    position: relative;
+    bottom: 50px;
+}
+
+.form-control:focus {
+    outline: none;
+    border-color: #34c4c3;
+}
+
+.btn-submit {
+    background-color: #34c4c3;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 20px 20px; /* Adjusted padding */
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+
+.btn-submit:hover {
+    background-color: #05386b;
+}
+

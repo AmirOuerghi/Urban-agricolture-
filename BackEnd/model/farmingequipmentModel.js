@@ -1,26 +1,30 @@
-const db = require('../DataBase-Mysql/index');
+const db = require('../DataBase-Mysql');
 
+// Create a new equipment
 exports.create = async (equipmentData) => {
-  const [result] = await db.query('INSERT INTO FarmEquipment SET ?', equipmentData);
-  const equipment = { id: result.insertId, ...equipmentData };
-  return equipment;
+  const [result] = await db.query('INSERT INTO farmequipment SET ?', equipmentData);
+  return { id: result.insertId, ...equipmentData };
 };
 
+// Get all equipment
 exports.getAll = async () => {
-  const [rows] = await db.query('SELECT * FROM FarmEquipment');
+  const [rows] = await db.query('SELECT * FROM farmequipment');
   return rows;
 };
 
-exports.getById = async (id) => {
-  const [rows] = await db.query('SELECT * FROM FarmEquipment WHERE id = ?', [id]);
+// Get equipment by ID
+exports.getById = async (equipmentId) => {
+  const [rows] = await db.query('SELECT * FROM farmequipment WHERE ID = ?', [equipmentId]);
   return rows[0];
 };
 
-exports.updateById = async (id, equipmentData) => {
-  await db.query('UPDATE FarmEquipment SET ? WHERE id = ?', [equipmentData, id]);
-  return { id, ...equipmentData };
+// Update equipment by ID
+exports.updateById = async (equipmentId, equipmentData) => {
+  await db.query('UPDATE farmequipment SET ? WHERE ID = ?', [equipmentData, equipmentId]);
+  return { id: equipmentId, ...equipmentData };
 };
 
-exports.deleteById = async (id) => {
-  await db.query('DELETE FROM FarmEquipment WHERE id = ?', [id]);
+// Delete equipment by ID
+exports.deleteById = async (equipmentId) => {
+  await db.query('DELETE FROM farmequipment WHERE ID = ?', [equipmentId]);
 };
