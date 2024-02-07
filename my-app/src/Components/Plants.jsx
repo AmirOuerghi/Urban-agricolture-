@@ -22,7 +22,7 @@ function Plants() {
 
   const fetchPlants = async () => {
     try {
-      const response = await axios.get('http://localhost:8000/hiba/get');
+      const response = await axios.get('http://localhost:8000/api/Plants/get');
       setPlants(response.data);
     } catch (error) {
       console.error('Error fetching plants:', error);
@@ -31,7 +31,7 @@ function Plants() {
 
   const deletePlant = async (id) => {
     try {
-      await axios.delete(`http://localhost:8000/hiba/${id}`);
+      await axios.delete(`http://localhost:8000/api/Plants/delete${id}`);
       fetchPlants();
     } catch (error) {
       console.error('Error deleting plant:', error);
@@ -40,7 +40,7 @@ function Plants() {
 
   const updatePlant = async (id) => {
     try {
-      await axios.put(`http://localhost:8000/hiba/update/${id}`, updatedPlantData);
+      await axios.put(`http://localhost:8000/api/Plants/update/${id}`, updatedPlantData);
       fetchPlants();
       setModalIsOpen({ ...modalIsOpen, [id]: false });
       setUpdatedPlantData({});
@@ -79,7 +79,7 @@ function Plants() {
 
   const addPlant = async () => {
     try {
-      await axios.post('http://localhost:8000/hiba/add', newPlantData);
+      await axios.post('http://localhost:8000/api/Plants/add', newPlantData);
       setAddingPlant(false);
       setNewPlantData({});
       fetchPlants();
