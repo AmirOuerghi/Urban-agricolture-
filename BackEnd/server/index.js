@@ -8,7 +8,7 @@ const app = express();
 const server = http.createServer(app);
 const io = socketIo(server);
 const farmingEquipmentRoutes = require('../routes/farmingequipmentRoutes');
-
+const Plants = require('../routes/plants');
 
 const PORT = process.env.PORT || 8000;
 
@@ -22,7 +22,7 @@ app.get('/api/chatroom', (req, res) => {
   res.json(chatroom);
 });
 
-app.use('/api/users', userRoutes); 
+// app.use('/api/users', userRoutes); 
 // app.use('/api/farmingequipment', farmingEquipmentRoutes);
 
 
@@ -47,7 +47,7 @@ io.on('connection', (socket) => {
 
 app.use('/api/users', userRoutes); 
 app.use('/api/farmingequipment', farmingEquipmentRoutes);
-
+app.use('/api/Plants', Plants);
 
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
