@@ -10,7 +10,7 @@ const io = socketIo(server);
 const farmingEquipmentRoutes = require('../routes/farmingequipmentRoutes');
 
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 8000;
 
 app.use(bodyParser.json());
 app.use(cors());

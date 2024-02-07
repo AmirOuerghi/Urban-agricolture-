@@ -1,10 +1,12 @@
 import React from 'react';
-import LoginPage from './Components/LoginPage';
+// import LoginPage from './Components/LoginPage';
+import Plants from './Components/Plants'
 
 function App() {
   return (
     <div>
-      <LoginPage />
+      {/* <LoginPage /> */}
+      <Plants/>
     </div>
   );
 }
