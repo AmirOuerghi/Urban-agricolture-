@@ -1,14 +1,14 @@
-// src/components/LoginPage.js
-
 import React, { useState } from 'react';
-import emailjs from 'emailjs-com';
-import './LoginPage.css';
-
+import 'bootstrap/dist/css/bootstrap.min.css';
+import './LoginPage.css'
 const LoginPage = () => {
   const [loginEmail, setLoginEmail] = useState('');
   const [loginPassword, setLoginPassword] = useState('');
   const [signupEmail, setSignupEmail] = useState('');
   const [signupPassword, setSignupPassword] = useState('');
+  const [isLoginView, setIsLoginView] = useState(true);
+  const [loginError, setLoginError] = useState('');
+  const [signupError, setSignupError] = useState('');
 
   const handleLogin = async () => {
     try {
@@ -22,21 +22,15 @@ const LoginPage = () => {
 
       if (response.ok) {
         const { token } = await response.json();
-
-        // Save the token to local storage or a secure storage mechanism
         localStorage.setItem('token', token);
-
-        // Send a welcome email (client-side logic)
         sendWelcomeEmail(loginEmail);
-
-        // Redirect to the homepage (you can use react-router-dom or any other method)
-        window.location.href = '/'; // Change the path as needed
+        window.location.href = '/';
       } else {
-        // Authentication failed
-        alert('Authentication failed. Please check your credentials.');
+        setLoginError('Authentication failed. Please check your credentials.');
       }
     } catch (error) {
       console.error('Error during login:', error);
+      setLoginError('An error occurred. Please try again later.');
     }
   };
 
@@ -52,86 +46,99 @@ const LoginPage = () => {
 
       if (response.ok) {
         const { token } = await response.json();
-
-        // Save the token to local storage or a secure storage mechanism
         localStorage.setItem('token', token);
-
-        // Send a welcome email (client-side logic)
         sendWelcomeEmail(signupEmail);
-
-        // Redirect to the homepage (you can use react-router-dom or any other method)
-        window.location.href = '/'; // Change the path as needed
+        window.location.href = '/';
       } else {
-        // Signup failed
-        alert('Signup failed. Please try again.');
+        setSignupError('Signup failed. Please try again.');
       }
     } catch (error) {
       console.error('Error during signup:', error);
+      setSignupError('An error occurred. Please try again later.');
     }
   };
 
   const sendWelcomeEmail = (userEmail) => {
-    // ... (same as before)
+    // Placeholder for sending welcome email logic
+    console.log('Sending welcome email to:', userEmail);
+  };
+
+  const toggleView = () => {
+    setIsLoginView(!isLoginView);
+    setLoginError('');
+    setSignupError('');
   };
 
   return (
-    <div className="login-container">
-      <div className="login-box">
-        <h2>Login</h2>
-        <form>
-          <div className="user-box">
-            <input
-              type="text"
-              name="loginEmail"
-              required
-              value={loginEmail}
-              onChange={(e) => setLoginEmail(e.target.value)}
-            />
-            <label>Email</label>
+    <div className="login-page-container">
+      <div className="container">
+        <div className="row justify-content-center align-items-center">
+          <div className="col-md-6">
+            <div className="card login-card">
+              <div className="card-body">
+                {isLoginView ? (
+                  <div>
+                    <h2 className="card-title text-center mb-4">Login</h2>
+                    <form>
+                      <div className="mb-3">
+                        <input
+                          type="text"
+                          className="form-control"
+                          placeholder="Email"
+                          value={loginEmail}
+                          onChange={(e) => setLoginEmail(e.target.value)}
+                        />
+                      </div>
+                      <div className="mb-3">
+                        <input
+                          type="password"
+                          className="form-control"
+                          placeholder="Password"
+                          value={loginPassword}
+                          onChange={(e) => setLoginPassword(e.target.value)}
+                        />
+                      </div>
+                      {loginError && <div className="alert alert-danger">{loginError}</div>}
+                      <button type="button" className="btn btn-primary w-100" onClick={handleLogin}>
+                        Login
+                      </button>
+                    </form>
+                    <p className="mt-3 text-center" onClick={toggleView}>Don't have an account? Signup</p>
+                  </div>
+                ) : (
+                  <div>
+                    <h2 className="card-title text-center mb-4">Signup</h2>
+                    <form>
+                      <div className="mb-3">
+                        <input
+                          type="text"
+                          className="form-control"
+                          placeholder="Email"
+                          value={signupEmail}
+                          onChange={(e) => setSignupEmail(e.target.value)}
+                        />
+                      </div>
+                      <div className="mb-3">
+                        <input
+                          type="password"
+                          className="form-control"
+                          placeholder="Password"
+                          value={signupPassword}
+                          onChange={(e) => setSignupPassword(e.target.value)}
+                        />
+                      </div>
+                      {signupError && <div className="alert alert-danger">{signupError}</div>}
+                      <button type="button" className="btn btn-success w-100" onClick={handleSignup}>
+                        Signup
+                      </button>
+                    </form>
+                    <p className="mt-3 text-center" onClick={toggleView}>Already have an account? Login</p>
+                  </div>
+                )}
+              </div>
+            </div>
           </div>
-          <div className="user-box">
-            <input
-              type="password"
-              name="loginPassword"
-              required
-              value={loginPassword}
-              onChange={(e) => setLoginPassword(e.target.value)}
-            />
-            <label>Password</label>
-          </div>
-          <button type="button" onClick={handleLogin}>
-            Login
-          </button>
-        </form>
-      </div>
-
-      <div className="signup-box">
-        <h2>Signup</h2>
-        <form>
-          <div className="user-box">
-            <input
-              type="text"
-              name="signupEmail"
-              required
-              value={signupEmail}
-              onChange={(e) => setSignupEmail(e.target.value)}
-            />
-            <label>Email</label>
-          </div>
-          <div className="user-box">
-            <input
-              type="password"
-              name="signupPassword"
-              required
-              value={signupPassword}
-              onChange={(e) => setSignupPassword(e.target.value)}
-            />
-            <label>Password</label>
-          </div>
-          <button type="button" onClick={handleSignup}>
-            Signup
-          </button>
-        </form>
+        </div>
       </div>
     </div>
   );

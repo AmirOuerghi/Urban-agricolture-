@@ -1,22 +1,54 @@
-const cors = require('cors');
 const express = require('express');
-const userRoutes = require('../routes/userRoutes');
-const plantsRoutes = require('../routes/plants');
+const http = require('http');
+const socketIo = require('socket.io');
 const bodyParser = require('body-parser');
-
+const cors = require('cors');
+const userRoutes = require('../routes/userRoutes');
 const app = express();
+const server = http.createServer(app);
+const io = socketIo(server);
+const farmingEquipmentRoutes = require('../routes/farmingequipmentRoutes');
 
-// Enable CORS before defining routes
-app.use(cors({ origin: 'http://localhost:3000', credentials: true }));
 
-// Use bodyParser for parsing JSON data
+const PORT = process.env.PORT || 3000;
+
 app.use(bodyParser.json());
+app.use(cors());
 
-// Define your routes after setting up middleware
-app.use('/api', userRoutes);
-app.use('/hiba', plantsRoutes);
 
-const PORT = process.env.PORT || 8000;
+let chatroom = [];
+
+app.get('/api/chatroom', (req, res) => {
+  res.json(chatroom);
+});
+
+app.use('/api/users', userRoutes); 
+// app.use('/api/farmingequipment', farmingEquipmentRoutes);
+
+
+
+app.post('/api/chatroom', (req, res) => {
+  const { message } = req.body;
+  chatroom.push(message);
+  io.emit('message', message); 
+  res.status(201).send('Message sent to chatroom');
+});
+
+io.on('connection', (socket) => {
+  console.log('A user connected');
+
+  socket.emit('chatHistory', chatroom);
+
+  socket.on('disconnect', () => {
+    console.log('User disconnected');
+  });
+});
+
+
+app.use('/api/users', userRoutes); 
+app.use('/api/farmingequipment', farmingEquipmentRoutes);
+
+
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
