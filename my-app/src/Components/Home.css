@@ -1,0 +1,45 @@
+/* Home.css */
+.background-container {
+    background-repeat: no-repeat;
+    background-size:cover;
+    height: 1000px;
+    width: 1600px;
+    margin-top: -5%;
+    
+  }
+.one{
+    color: rgb(255, 255, 255);
+    font-family:Arial, Helvetica, sans-serif;
+    width: 20%;
+    margin-left: 3%;
+    margin-top: -50.9%;
+    background-color: rgba(0, 0, 0, 0.172);
+    border-radius: 4%;
+    font-size: 130%;
+    font-style: normal;
+}  
+.two{
+  color: rgb(255, 255, 255);
+  font-family:Arial, Helvetica, sans-serif;
+  width: 20%;
+  margin-left: 40%;
+  margin-top: -32.5%;
+  background-color: rgba(0, 0, 0, 0.172);
+  border-radius: 4%;
+  font-size: 130%;
+  font-style: normal;
+  height: max-content;
+
+}  
+.three{
+  color: rgb(255, 255, 255);
+  font-family:Arial, Helvetica, sans-serif;
+  width: 20%;
+  margin-left: 77%;
+  margin-top: -32.5%;
+  background-color: rgba(0, 0, 0, 0.172);
+  border-radius: 4%;
+  font-size: 130%;
+  font-style:normal;
+  height: max-content;
+}  
