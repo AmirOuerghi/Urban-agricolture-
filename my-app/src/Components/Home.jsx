@@ -6,7 +6,7 @@ import './Home.css';
 export default function Home() {
   return (
     <div>
-      <Navbar />
+      
       <div className="background-container" style={{backgroundImage: `url(${image})`}}></div>
       <p className="one">
           Sustainable Agriculture: <hr />
