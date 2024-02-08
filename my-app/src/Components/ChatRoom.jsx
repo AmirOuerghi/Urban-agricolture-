@@ -5,7 +5,7 @@ import './ChatRoom.css';
 const ChatRoom = () => {
   const [messages, setMessages] = useState([]);
   const [newMessage, setNewMessage] = useState('');
-  const socket = io('http://localhost:3001'); // Replace with your backend server URL
+  const socket = io('http://localhost:3000'); // Replace with your backend server URL
 
   useEffect(() => {
     // Fetch initial chat history from the server
@@ -24,7 +24,7 @@ const ChatRoom = () => {
 
   const fetchChatHistory = async () => {
     try {
-      const response = await fetch('http://localhost:3001/api/chatroom'); // Replace with your backend server URL
+      const response = await fetch('http://localhost:3000/api/chatroom'); // Replace with your backend server URL
       if (response.ok) {
         const data = await response.json();
         setMessages(data);
@@ -38,7 +38,7 @@ const ChatRoom = () => {
 
   const sendMessage = async () => {
     try {
-      const response = await fetch('http://localhost:3001/api/chatroom', {
+      const response = await fetch('http://localhost:3000/api/chatroom', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
