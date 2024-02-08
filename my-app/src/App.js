@@ -9,6 +9,8 @@ import LoginPage from './Components/LoginPage';
 import FarmingEquipment from './Components/farmingequipment'; 
 import CartItems from './Components/CartItems';
 import Footer from './Components/Footer';
+import FarmingEquipment from './Components/farmingequipment';
+import LoginPage from './Components/LoginPage';
 
 function App() {
   return (

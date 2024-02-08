@@ -82,7 +82,7 @@ const FarmingEquipment = () => {
                 </Navbar.Collapse>
             </Navbar>
 
-            {/* Conditional rendering of the form */}
+           
             {showForm && (
                 <Form className="mt-3" onSubmit={handleSubmit}>
                     <FormControl type="text" name="Name" value={formData.Name} onChange={handleInputChange} placeholder="Name" className="mr-sm-2" />
