@@ -1,0 +1,47 @@
+.navbar {
+    display: flex;
+    justify-content: space-around;
+    padding: 16px;
+    box-shadow: 0 1px 3px -2px rgb(0, 0, 0);
+    background-color: rgba(255, 255, 255, 0.177); /* Change the alpha value to adjust transparency */
+
+position: relative;
+top: 20px
+}
+.nav-menu{
+    display: flex;
+    align-items: center;
+    list-style: none;
+    gap: 50px;
+    color: #ff0000;
+    font-size: 19px;
+    font-weight: 500;
+}
+
+.nav-cart-count{
+    width: 22px;
+    height: 22px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: -35px;
+    margin-left: -55px;
+    border-radius: 11px;
+    font-size: 14px;
+    background: red;
+    color: rgb(217, 217, 217);
+}
+
+.p{
+    font-size: 190%;
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: italic;
+    border-radius: 700%;
+    box-shadow: #000000;
+    border: 20cm;
+    align-items: center;
+    font-weight: 100;
+}
+.btn{
+    background-color: #ff0000;
+}
