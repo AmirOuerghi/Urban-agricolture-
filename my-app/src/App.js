@@ -5,8 +5,8 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Navbar } from './Components/Navbar';
 import Home from './Components/Home';
 import Plants from './Components/Plants';
-import LoginPage from './Components/LoginPage'; 
-import FarmingEquipment from './Components/farmingequipment'; 
+import FarmingEquipment from './Components/farmingequipment';
+import LoginPage from './Components/LoginPage';
 
 function App() {
   return (
@@ -16,8 +16,8 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/plants" element={<Plants />} />
-          <Route path="/login" element={<LoginPage />} /> 
-          <Route path="/farming-equipment" element={<FarmingEquipment />} /> 
+          <Route path="/farming-equipment" element={<FarmingEquipment />} />
+          <Route path="/login" element={<LoginPage />} />
         </Routes>
       </BrowserRouter>
     </div>
