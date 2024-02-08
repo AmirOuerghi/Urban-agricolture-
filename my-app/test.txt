@@ -1,7 +1,3 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import './Home.css';
-
 const pages = [
   {
     name: 'Plants',
@@ -22,39 +18,4 @@ const pages = [
     link: '/landscaping-ideas'
   }
 ];
-
-
-
-// Define the Home component
-const Home = () => {
-  return (
-    <div className="home">
-      {/* Render each page as a clickable card */}
-      <div className="page-container">
-        {pages.map((page, index) => (
-          <Link to={page.link} key={index} className="page-link">
-            <div className="card">
-              {/* Display the image associated with the page */}
-              <img src={page.image} alt={page.name} className="card-image" />
-              <div className="card-overlay">
-                {/* Display the name and description of the page */}
-                <h3 className="card-title">{page.name}</h3>
-                <p className="card-description">{page.description}</p>
-              </div>
-            </div>
-          </Link>
-        ))}
-      </div>
-      {/* Render the footer with contact information */}
-      <footer className="footer">
-        <div className="contact-info">
-          <p>Phone: 123-456-7890</p>
-          <p>Email: info@example.com</p>
-        </div>
-      </footer>
-    </div>
-  );
-};
-
-export default Home;
 
