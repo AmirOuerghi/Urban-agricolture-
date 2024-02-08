@@ -4,6 +4,9 @@
     padding: 16px;
     box-shadow: 0 1px 3px -2px rgb(0, 0, 0);
     background-color: rgba(255, 255, 255, 0.177); /* Change the alpha value to adjust transparency */
+
+position: relative;
+top: 20px
 }
 .nav-menu{
     display: flex;
