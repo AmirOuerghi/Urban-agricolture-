@@ -1,32 +1,47 @@
-/* ChatRoom.css */
-
 .ChatRoom {
-    width: 400px; /* Set the width of the chatroom box */
-    height: 300px; /* Set the height of the chatroom box */
-    border: 1px solid #ccc; /* Add border for the box */
-    padding: 10px; /* Add padding inside the box */
-    overflow-y: auto; /* Add vertical scrollbar if necessary */
-  }
-  
-  .ChatRoom .message {
-    padding: 5px;
-    margin-bottom: 5px;
-    background-color: #f2f2f2;
-    border-radius: 5px;
-  }
-  
-  .ChatRoom .user-message {
-    background-color: #dbf5b4;
-    text-align: right;
-  }
-  
-  .ChatRoom input[type="text"] {
-    width: calc(100% - 70px); /* Adjust input width */
-    padding: 5px;
-    margin-right: 5px;
-  }
-  
-  .ChatRoom button {
-    padding: 5px 10px;
-  }
-  
+  width: 400px; /* Set the width of the chatroom box */
+  height: 300px; /* Set the height of the chatroom box */
+  border: 1px solid #ccc; /* Add border for the box */
+  padding: 15px; /* Add padding inside the box */
+  overflow-y: auto; /* Add vertical scrollbar if necessary */
+  display: flex; /* Use flexbox for layout */
+  flex-direction: column; /* Set the direction of the flex container */
+  gap: 15px; /* Add gap between child elements */
+  align-items: flex-start; /* Align items to the start of the cross axis */
+}
+
+.ChatRoom .message {
+  padding: 15px; /* Increase padding for messages */
+  background-color: #f2f2f2;
+  border-radius: 15px; /* Increase border radius for a rounded look */
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1); /* Add a subtle box shadow */
+}
+
+.ChatRoom .user-message {
+  background-color: #dbf5b4;
+  text-align: right;
+  border-radius: 15px; /* Apply border radius to user messages */
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1); /* Add a subtle box shadow */
+}
+
+.ChatRoom input[type="text"] {
+  flex: 1; /* Take up remaining space in the flex container */
+  padding: 15px; /* Increase padding for input */
+  border: 1px solid #ccc; /* Add border for input */
+  border-radius: 15px; /* Add border radius for a rounded look */
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1); /* Add a subtle box shadow */
+}
+
+.ChatRoom button {
+  padding: 15px 30px; /* Increase padding for button */
+  border: 1px solid #ccc; /* Add border for button */
+  border-radius: 15px; /* Add border radius for a rounded look */
+  background-color: #4CAF50; /* Add background color for button */
+  color: white; /* Set text color to white */
+  cursor: pointer; /* Add pointer cursor for button */
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1); /* Add a subtle box shadow */
+}
+
+.ChatRoom button:hover {
+  background-color: #45a049; /* Darken button color on hover */
+}
