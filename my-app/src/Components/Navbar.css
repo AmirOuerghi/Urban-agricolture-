@@ -10,9 +10,10 @@
     align-items: center;
     list-style: none;
     gap: 50px;
-    color: #ff0000;
+    color: #000000;
     font-size: 19px;
     font-weight: 500;
+
 }
 
 .nav-cart-count{
@@ -39,6 +40,4 @@
     align-items: center;
     font-weight: 100;
 }
-.btn{
-    background-color: #ff0000;
-}
+

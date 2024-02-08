@@ -1,4 +1,3 @@
-// Home.js
 import React from 'react';
 import { Navbar } from './Navbar';
 import image from './Assets/image.png';

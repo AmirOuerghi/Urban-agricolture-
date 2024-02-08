@@ -13,10 +13,11 @@ export const Navbar = () => {
           <p className='p'>URBAN🌾AGRICULTURE</p>
         </div>
         <ul className='nav-menu'>
-          <li className='btn'><button>Medicine💉Animals🇹🇳</button></li>
-          <li className='btn'><button>Farming Equipment</button></li>
-          <li className='btn'><button>Hiba</button></li>
-          <li className='btn'><Link to="/login"><button>Login</button></Link></li>
+          <li>Home🏠</li>
+          <li>Medicine-Animals 💉</li>
+          <li >Farming-Equipment 🚜</li>
+          <li >Plants🍀</li>
+          <li >Login 🔒</li>
           <img src={cart_icon} alt="" />
           <div className="nav-cart-count">0</div>
         </ul>
