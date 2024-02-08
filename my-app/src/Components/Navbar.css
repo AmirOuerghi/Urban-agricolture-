@@ -1,21 +1,26 @@
-.navbar {
+.Navbar {
     display: flex;
     justify-content: space-around;
     padding: 16px;
     box-shadow: 0 1px 3px -2px rgb(0, 0, 0);
-    background-color: rgba(255, 255, 255, 0.177); /* Change the alpha value to adjust transparency */
-
-position: relative;
-top: 20px
+    position: relative;
+    top: 20px;
 }
+
 .nav-menu{
     display: flex;
     align-items: center;
     list-style: none;
-    gap: 50px;
-    color: #ff0000;
+    gap: 35px;
     font-size: 19px;
     font-weight: 500;
+    font-family: 'Times New Roman', Times, serif;
+    font-style: normal;
+
+}
+.nav-menu li:hover {
+    background-color: #00000041; 
+    border-radius: 20px;
 }
 
 .nav-cart-count{
@@ -37,11 +42,14 @@ top: 20px
     font-family: Arial, Helvetica, sans-serif;
     font-style: italic;
     border-radius: 700%;
-    box-shadow: #000000;
+    box-shadow: #d60303;
     border: 20cm;
     align-items: center;
     font-weight: 100;
+    color: black;
 }
-.btn{
-    background-color: #ff0000;
+
+.test{
+    color: rgb(8, 7, 7);
+    font-size: 130%;
 }
