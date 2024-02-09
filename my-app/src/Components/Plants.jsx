@@ -99,7 +99,6 @@ function Plants() {
   });
   return (
     <div>
-      <h1>Plant Products</h1>
       {/* "Add New Plant" form */}
        {/* Search input */}
        <div className="search-container">

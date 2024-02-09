@@ -133,7 +133,8 @@
 .search-container {
   display: flex;
   justify-content: center;
-  margin-bottom: 20px; /* Add margin bottom for spacing */
+  margin-bottom: 20px;
+  margin-top: 52px; /* Add margin bottom for spacing */
 }
 
 .search-input {
