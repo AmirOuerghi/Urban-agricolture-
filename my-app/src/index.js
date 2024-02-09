@@ -1,13 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-
 import App from './App';
+import ShopContextProvider from './ShopContext'; 
 
-
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
- 
-    <App />
- 
+ReactDOM.render(
+  <React.StrictMode>
+    <ShopContextProvider>
+      <App />
+    </ShopContextProvider>
+  </React.StrictMode>,
+  document.getElementById('root')
 );
-  
