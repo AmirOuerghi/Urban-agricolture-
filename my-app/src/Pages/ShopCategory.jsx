@@ -1,8 +1,7 @@
 import React, { useContext } from 'react'
-import './css/ShopCategory.css'
-import { ShopContext } from '../Context/ShopContext'
-import Item from '../Components/MedicineForAnimals/Item/Item';
-import ProductList from '../Components/MedicineForAnimals/ProductList';
+import './ShopCategory.css'
+import { ShopContext } from '../ShopContext'
+import Item from '../Components/Item';
 
 
  const ShopCategory = (props) => {
