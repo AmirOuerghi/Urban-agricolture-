@@ -3,6 +3,9 @@ import Card from 'react-bootstrap/Card';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import ContactDropdown from './Appointments';
+import './doctores.css'
+import SearchIcon from '@mui/icons-material/Search';
+
 
 const doctorsData = [
   {
@@ -77,9 +80,11 @@ function Doctors() {
       <div>
         <input
           type="text"
-          placeholder="Search by doctor title..."
+          placeholder="Search By Doctor Title...                  🔍"
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
+          className='search-input'
+          
         />
       </div>
       <Row>

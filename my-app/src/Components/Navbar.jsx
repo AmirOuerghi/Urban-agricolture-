@@ -33,7 +33,7 @@ export const Navbar = () => {
             </NavDropdown>
           <li ><Link  style={{textDecoration:'none'}}to="/farming-equipment"className='test'>Farming-Equipment <AgricultureIcon/></Link></li>
           <li ><Link  style={{textDecoration:'none'}}to="/Doctors"className='test'> PetVets <AssignmentIndIcon/> </Link></li> 
-          <li ><Link  style={{textDecoration:'none'}}to="/P4"className='test'> Satitics <InsightsIcon/> </Link></li> 
+          <li ><Link  style={{textDecoration:'none'}}to="/P4"className='test'> Statistics <InsightsIcon/> </Link></li> 
           <li ><Link  style={{textDecoration:'none'}}to="/login"className='test'>Login <LockOpenIcon/></Link></li> 
           <Link to='/cart'><img src={cart_icon} alt="" /></Link>
           <div className="nav-cart-count">{getTotalCartItems()}</div>

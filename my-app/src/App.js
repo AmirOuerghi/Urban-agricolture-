@@ -16,7 +16,7 @@ import dog_banner from './Components/Assets/dog_banner.png'
 import ShopCategory from './Pages/ShopCategory';
 import Product from './Pages/Product';
 import Doctors from './doctor/doctores'
-import P4 from './satistics/P4'
+import P4 from './Statistics/P4'
 
 function App() {
   return (

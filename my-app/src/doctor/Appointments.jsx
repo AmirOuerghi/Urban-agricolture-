@@ -25,7 +25,7 @@ const ContactDropdown = () => {
   };
 
   const phone = () => {
-    toast('📞123-456-7890');
+    toast('📞58676213');
   };
 
   const handleNoteClick = () => {
