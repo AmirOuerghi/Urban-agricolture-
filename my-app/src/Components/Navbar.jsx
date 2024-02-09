@@ -5,7 +5,6 @@ import cart_icon from './Assets/cart_icon.png';
 import { Link } from 'react-router-dom'; 
 import { ShopContext } from '../ShopContext';
 import YardIcon from '@mui/icons-material/Yard';
-import VaccinesIcon from '@mui/icons-material/Vaccines';
 import AgricultureIcon from '@mui/icons-material/Agriculture';
 import LockOpenIcon from '@mui/icons-material/LockOpen';
 import AssignmentIndIcon from '@mui/icons-material/AssignmentInd';
@@ -25,11 +24,12 @@ export const Navbar = () => {
         <ul className='nav-menu'>
           <li  ><Link  style={{textDecoration:'none'}}to="/plants"className='test'>Plants <YardIcon/> </Link></li> 
            <NavDropdown title="Medicine-Animals 💉 " menuVariant="dark" id='v' className='test' >
-            <Link style={{textDecoration:'none'}}to="/"> <NavDropdown.Item >cow</NavDropdown.Item></Link> 
-            <Link style={{textDecoration:'none'}} to="/"> <NavDropdown.Item >Sheep</NavDropdown.Item></Link> 
-            <Link style={{textDecoration:'none'}}to="/"> <NavDropdown.Item >Horse</NavDropdown.Item></Link> 
-            <Link style={{textDecoration:'none'}}to="/"> <NavDropdown.Item >Donkey</NavDropdown.Item></Link> 
-            <Link style={{textDecoration:'none'}}to="/"> <NavDropdown.Item >Dog</NavDropdown.Item></Link> 
+             <NavDropdown.Item ><Link style={{textDecoration:'none'}}to="/cows" className='t'>Cow 🐄</Link> </NavDropdown.Item> 
+             <NavDropdown.Item ><Link style={{textDecoration:'none'}} to="/sheep"className='t'>Sheep 🐑</Link> </NavDropdown.Item>
+            <NavDropdown.Item ><Link style={{textDecoration:'none'}} to="/chicken"className='t'> Chicken🐓</Link></NavDropdown.Item> 
+             <NavDropdown.Item ><Link style={{textDecoration:'none'}}to="/horse"className='t'>Horse 🐎</Link> </NavDropdown.Item>
+             <NavDropdown.Item ><Link style={{textDecoration:'none'}}to="/donkey"className='t'>Donkey 🫏</Link></NavDropdown.Item> 
+             <NavDropdown.Item ><Link style={{textDecoration:'none'}}to="/dog"className='t'>Dog 🦮</Link> </NavDropdown.Item>
             </NavDropdown>
           <li ><Link  style={{textDecoration:'none'}}to="/farming-equipment"className='test'>Farming-Equipment <AgricultureIcon/></Link></li>
           <li ><Link  style={{textDecoration:'none'}}to="/m"className='test'> PetVets <AssignmentIndIcon/> </Link></li> 
