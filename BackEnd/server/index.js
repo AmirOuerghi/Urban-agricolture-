@@ -9,6 +9,7 @@ const server = http.createServer(app);
 const io = socketIo(server);
 const farmingEquipmentRoutes = require('../routes/farmingequipmentRoutes');
 const Plants = require('../routes/plants');
+const axios = require('axios').default;
 
 const PORT = process.env.PORT || 8000;
 
@@ -44,6 +45,39 @@ io.on('connection', (socket) => {
   });
 });
 
+app.post("/authenticate", async (req, res) => {
+  const { username } = req.body;
+  
+  try {
+    const response = await axios.put(
+      'https://api.chatengine.io/users/',
+      { username: username, secret: username, first_name: username },
+      { headers: { "private-key": "e72422c1-d3c4-4a1f-bcd8-8b099bdc689d" } }
+    );
+
+    return res.status(response.status).json(response.data);
+  } catch (error) {
+
+    if (error.response) {
+      // If there's a response, extract the status code and response data
+      const { status, data } = error.response;
+      return res.status(status).json(data);
+    } else {
+      // If there's no response, handle the error as a generic server error
+      return res.status(500).json({ error: "Internal Server Error" });
+    }
+  }
+
+
+});
+
+
+
+ 
+//   return res.json ({username:username , secret:"sh256..."})
+//   res.json({ success: true })
+// })
+ 
 
 app.use('/api/users', userRoutes); 
 app.use('/api/farmingequipment', farmingEquipmentRoutes);
