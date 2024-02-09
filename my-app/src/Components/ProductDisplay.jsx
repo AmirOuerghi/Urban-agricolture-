@@ -9,8 +9,6 @@ import { ShopContext } from '../ShopContext'
     <div className='productdisplay'>
         <div className="productdisplay-left">
             <div className="productdisplay-img-list">
-              
-               
             </div>
             <div className="productdispaly-img">
                 <img  className='productdisplay-main-img'src={product.image} alt="" />
@@ -18,7 +16,6 @@ import { ShopContext } from '../ShopContext'
         </div>
         <div className="productdisplay-right">
             <h1>{product.name}</h1>
-         
             <div className="productdisplay-right-prices">
                 <div className="productdisplay-right-price-new">{product.new_price}DT</div>
             </div>

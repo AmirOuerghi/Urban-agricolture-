@@ -1,9 +1,12 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect,useContext } from 'react';
 import axios from 'axios';
 import Modal from 'react-modal';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEdit, faTrashAlt, faSave, faTimes, faFileCirclePlus } from '@fortawesome/free-solid-svg-icons';
 import './Plants.css';
+import { ShopContext } from '../ShopContext';
+import data from '../data/data.json'; 
+
 
 Modal.setAppElement('#root'); 
 
@@ -15,9 +18,11 @@ function Plants() {
   const [newPlantData, setNewPlantData] = useState({});
   const [addingPlant, setAddingPlant] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
+  const{addToCart}=useContext(ShopContext); 
+
 
   useEffect(() => {
-    fetchPlants();
+    fetchPlants(data);
   }, []);
 
   const fetchPlants = async () => {
@@ -94,7 +99,6 @@ function Plants() {
   });
   return (
     <div>
-      <h1>Plant Products</h1>
       {/* "Add New Plant" form */}
        {/* Search input */}
        <div className="search-container">
@@ -158,6 +162,7 @@ function Plants() {
               <h3 className="plant-name">{plant.Name}</h3>
               <p className="plant-size">Size: {plant.Size}</p>
               <p className="plant-price">Price: {plant.Price}</p>
+              <button onClick={()=>{addToCart(plant.id)}}> 🛒</button>
               {updateMode === plant.id && (
                 <Modal
                   isOpen={modalIsOpen[plant.id]}
