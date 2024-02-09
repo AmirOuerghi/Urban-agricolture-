@@ -17,7 +17,7 @@ import ShopCategory from './Pages/ShopCategory';
 import Product from './Pages/Product';
 import Doctors from './doctor/doctores'
 import P4 from './Statistics/P4'
-
+import ChatMain from './Components/chat/ChatMain'
 function App() {
   return (
     <div>
@@ -39,9 +39,10 @@ function App() {
         <Route path='/product/:productId' element={<Product/>} />
         <Route path='/Doctors' element={<Doctors/>} />
         <Route path='/P4' element={<P4/>} />
-
+        <Route path='/ChatMain' element={<ChatMain/>} />
       </Routes>
       <Footer/>
+      
     </BrowserRouter>
   </div>
   );
