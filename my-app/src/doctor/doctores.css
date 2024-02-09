@@ -1,0 +1,9 @@
+.search-input {
+    width: 300px; /* Adjust width as needed */
+    padding: 10px;
+    border-radius: 50px;
+    border: 1px solid #ccc;
+    outline: none;
+    margin-left: 40%;
+    border-color:green;
+  }
