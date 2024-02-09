@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { Card, CardGroup, Navbar, Nav, Form, FormControl, Button } from 'react-bootstrap';
+import { Card, Button, Form, FormControl } from 'react-bootstrap';
 import './farmingequipment.css';
+
 
 const FarmingEquipment = () => {
     const [data, setData] = useState([]);
@@ -64,43 +65,51 @@ const FarmingEquipment = () => {
 
     return (
         <div className="container">
-            <Navbar bg="dark" variant="dark" expand="lg">
-                <Navbar.Brand href="#">Farm Equipment</Navbar.Brand>
-                <Navbar.Toggle aria-controls="basic-navbar-nav" />
-                <Navbar.Collapse id="basic-navbar-nav">
-                    <Nav className="mr-auto">
-                        <Nav.Link onClick={() => setSelectedType(null)}>All</Nav.Link>
-                        <Nav.Link onClick={() => setSelectedType('vehicles')}>Vehicles</Nav.Link>
-                        <Nav.Link onClick={() => setSelectedType('plantation')}>Plantation Equipment</Nav.Link>
-                        <Nav.Link onClick={() => setSelectedType('harvesting')}>Harvesting Equipment</Nav.Link>
-                        <Nav.Link onClick={() => setSelectedType('irrigation')}>Irrigation & Spraying Equipment</Nav.Link>
-                        <Nav.Link onClick={() => setSelectedType('livestock')}>Livestock Equipment</Nav.Link>
-                        <Nav.Link onClick={() => setSelectedType('storage')}>Storage & Handling Equipment</Nav.Link>
-                    </Nav>
-                    {/* Button to toggle form visibility */}
-                    <Button variant="outline-light" onClick={() => setShowForm(!showForm)}>Toggle Form</Button>
-                </Navbar.Collapse>
-            </Navbar>
+            <div className="sidebar">
+                <h1 className="sidebar-brand">Farm Equipment</h1>
+                <ul className="sidebar-menu">
+                    <li className="sidebar-item">
+                        <Button variant="light" onClick={() => setSelectedType(null)}>All</Button>
+                    </li>
+                    <li className="sidebar-item">
+                        <Button variant="light" onClick={() => setSelectedType('vehicles')}>Vehicles</Button>
+                    </li>
+                    <li className="sidebar-item">
+                        <Button variant="light" onClick={() => setSelectedType('plantation')}>Plantation Equipment</Button>
+                    </li>
+                    <li className="sidebar-item">
+                        <Button variant="light" onClick={() => setSelectedType('harvesting')}>Harvesting Equipment</Button>
+                    </li>
+                    <li className="sidebar-item">
+                        <Button variant="light" onClick={() => setSelectedType('irrigation')}>Irrigation & Spraying Equipment</Button>
+                    </li>
+                    <li className="sidebar-item">
+                        <Button variant="light" onClick={() => setSelectedType('livestock')}>Livestock Equipment</Button>
+                    </li>
+                    <li className="sidebar-item">
+                        <Button variant="light" onClick={() => setSelectedType('storage')}>Storage & Handling Equipment</Button>
+                    </li>
+                </ul>
+                <Button variant="light" onClick={() => setShowForm(!showForm)}>Toggle Form</Button>
+            </div>
+            <div className="main-content">
+                {showForm && (
+                    <Form className="form-container" onSubmit={handleSubmit}>
+                        <FormControl type="text" name="Name" value={formData.Name} onChange={handleInputChange} placeholder="Name" className="form-control" />
+                        <FormControl type="text" name="Type" value={formData.Type} onChange={handleInputChange} placeholder="Type" className="form-control" />
+                        <FormControl type="text" name="imageURL" value={formData.imageURL} onChange={handleInputChange} placeholder="Image URL" className="form-control" />
+                        <FormControl type="text" name="Description" value={formData.Description} onChange={handleInputChange} placeholder="Description" className="form-control" />
+                        <FormControl type="text" name="Size" value={formData.Size} onChange={handleInputChange} placeholder="Size" className="form-control" />
+                        <FormControl type="text" name="Dimensions" value={formData.Dimensions} onChange={handleInputChange} placeholder="Dimensions" className="form-control" />
+                        <FormControl type="text" name="Capacity" value={formData.Capacity} onChange={handleInputChange} placeholder="Capacity" className="form-control" />
+                        <Button variant="primary" type="submit" className="btn-submit">Submit</Button>
+                    </Form>
+                )}
 
-           
-            {showForm && (
-                <Form className="mt-3" onSubmit={handleSubmit}>
-                    <FormControl type="text" name="Name" value={formData.Name} onChange={handleInputChange} placeholder="Name" className="mr-sm-2" />
-                    <FormControl type="text" name="Type" value={formData.Type} onChange={handleInputChange} placeholder="Type" className="mr-sm-2" />
-                    <FormControl type="text" name="imageURL" value={formData.imageURL} onChange={handleInputChange} placeholder="Image URL" className="mr-sm-2" />
-                    <FormControl type="text" name="Description" value={formData.Description} onChange={handleInputChange} placeholder="Description" className="mr-sm-2" />
-                    <FormControl type="text" name="Size" value={formData.Size} onChange={handleInputChange} placeholder="Size" className="mr-sm-2" />
-                    <FormControl type="text" name="Dimensions" value={formData.Dimensions} onChange={handleInputChange} placeholder="Dimensions" className="mr-sm-2" />
-                    <FormControl type="text" name="Capacity" value={formData.Capacity} onChange={handleInputChange} placeholder="Capacity" className="mr-sm-2" />
-                    <Button variant="outline-primary" type="submit">Submit</Button>
-                </Form>
-            )}
-
-            <div className="card-container">
-                <CardGroup>
+                <div className="card-container">
                     {filterEquipmentByType().map((equipment, index) => (
-                        <Card key={index}>
-                            <Card.Img variant="top" src={equipment.imageURL} />
+                        <Card key={index} className="card">
+                            <Card.Img variant="top" src={equipment.imageURL} className="card-img-top" />
                             <Card.Body>
                                 <Card.Title>{equipment.Name}</Card.Title>
                                 <Card.Text>
@@ -113,7 +122,7 @@ const FarmingEquipment = () => {
                             </Card.Body>
                         </Card>
                     ))}
-                </CardGroup>
+                </div>
             </div>
         </div>
     );
