@@ -9,8 +9,7 @@ import VaccinesIcon from '@mui/icons-material/Vaccines';
 import AgricultureIcon from '@mui/icons-material/Agriculture';
 import LockOpenIcon from '@mui/icons-material/LockOpen';
 import AssignmentIndIcon from '@mui/icons-material/AssignmentInd';
-
-
+import NavDropdown from 'react-bootstrap/NavDropdown';
 
 
 export const Navbar = () => {
@@ -25,7 +24,13 @@ export const Navbar = () => {
         </div>
         <ul className='nav-menu'>
           <li  ><Link  style={{textDecoration:'none'}}to="/plants"className='test'>Plants <YardIcon/> </Link></li> 
-          <li ><Link  style={{textDecoration:'none'}}to="/m"className='test'> Medicine-Animals   <VaccinesIcon/> </Link></li> 
+           <NavDropdown title="Medicine-Animals 💉 " menuVariant="dark" id='v' className='test' >
+            <Link style={{textDecoration:'none'}}to="/"> <NavDropdown.Item >cow</NavDropdown.Item></Link> 
+            <Link style={{textDecoration:'none'}} to="/"> <NavDropdown.Item >Sheep</NavDropdown.Item></Link> 
+            <Link style={{textDecoration:'none'}}to="/"> <NavDropdown.Item >Horse</NavDropdown.Item></Link> 
+            <Link style={{textDecoration:'none'}}to="/"> <NavDropdown.Item >Donkey</NavDropdown.Item></Link> 
+            <Link style={{textDecoration:'none'}}to="/"> <NavDropdown.Item >Dog</NavDropdown.Item></Link> 
+            </NavDropdown>
           <li ><Link  style={{textDecoration:'none'}}to="/farming-equipment"className='test'>Farming-Equipment <AgricultureIcon/></Link></li>
           <li ><Link  style={{textDecoration:'none'}}to="/m"className='test'> PetVets <AssignmentIndIcon/> </Link></li> 
           <li ><Link  style={{textDecoration:'none'}}to="/login"className='test'>Login <LockOpenIcon/></Link></li> 
