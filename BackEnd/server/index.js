@@ -1,15 +1,14 @@
 const express = require('express');
 const http = require('http');
-const socketIo = require('socket.io');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const userRoutes = require('../routes/userRoutes');
 const app = express();
 const server = http.createServer(app);
-const io = socketIo(server);
 const farmingEquipmentRoutes = require('../routes/farmingequipmentRoutes');
 const Plants = require('../routes/plants');
 const axios = require('axios').default;
+const connection = require("../DataBase-Mysql/index2")
 
 const PORT = process.env.PORT || 8000;
 
@@ -17,33 +16,12 @@ app.use(bodyParser.json());
 app.use(cors());
 
 
-let chatroom = [];
-
-app.get('/api/chatroom', (req, res) => {
-  res.json(chatroom);
-});
-
-// app.use('/api/users', userRoutes); 
-// app.use('/api/farmingequipment', farmingEquipmentRoutes);
 
 
 
-app.post('/api/chatroom', (req, res) => {
-  const { message } = req.body;
-  chatroom.push(message);
-  io.emit('message', message); 
-  res.status(201).send('Message sent to chatroom');
-});
 
-io.on('connection', (socket) => {
-  console.log('A user connected');
 
-  socket.emit('chatHistory', chatroom);
 
-  socket.on('disconnect', () => {
-    console.log('User disconnected');
-  });
-});
 
 app.post("/authenticate", async (req, res) => {
   const { username } = req.body;
@@ -70,14 +48,35 @@ app.post("/authenticate", async (req, res) => {
 
 
 });
+app.post("/upload-image", (req, res) => {
+  const { imageUrl } = req.body;
+
+  // Insert image URL into MySQL database
+  const sql = 'INSERT INTO images (url) VALUES (?)';
+  connection.query(sql, [imageUrl], (err, result) => {
+    if (err) {
+      console.error('Error inserting image URL into database:', err);
+      res.status(500).json({ error: 'An error occurred while storing the image URL.' });
+      return;
+    }
+    res.status(200).json({ success: true });
+  });
+});
+app.get("/get-images", (req, res) => {
+  // Fetch all image URLs from the database
+  const sql = 'SELECT url FROM images';
+  connection.query(sql, (err, results) => {
+    if (err) {
+      console.error('Error fetching image URLs from database:', err);
+      res.status(500).json({ error: 'An error occurred while fetching the image URLs.' });
+      return;
+    }
+    const imageUrls = results.map(result => result.url);
+    res.status(200).json({ imageUrls });
+  });
+});
 
 
-
- 
-//   return res.json ({username:username , secret:"sh256..."})
-//   res.json({ success: true })
-// })
- 
 
 app.use('/api/users', userRoutes); 
 app.use('/api/farmingequipment', farmingEquipmentRoutes);
