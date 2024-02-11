@@ -28,19 +28,7 @@ const pages = [
 const Home = () => {
   return (
     <div className="home">
-      <div className="page-container">
-        {pages.map((page, index) => (
-          <Link to={page.link} key={index} className="page-link">
-            <div className="card">
-              <img src={page.image} alt={page.name} className="card-image" />
-              <div className="card-details">
-                <h3 className="card-title">{page.name}</h3>
-                <p className="card-description">{page.description}</p>
-              </div>
-            </div>
-          </Link>
-        ))}
-      </div>
+    
     </div>
   );
 };

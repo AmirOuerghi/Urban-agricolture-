@@ -1,8 +1,10 @@
 .home {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
+  padding: 20px;
+  background-image: url("file:///Users/user/Desktop/Urban-agricolture-/my-app/src/Components/Assets/image.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 1080px;
+  
 }
 
 .page-container {
