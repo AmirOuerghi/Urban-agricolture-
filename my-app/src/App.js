@@ -18,6 +18,7 @@ import Product from './Pages/Product';
 import Doctors from './doctor/doctores'
 import P4 from './Statistics/P4'
 import ChatMain from './Components/chat/ChatMain'
+import Article from './articles/Artical'
 function App() {
   return (
     <div>
@@ -40,6 +41,7 @@ function App() {
         <Route path='/Doctors' element={<Doctors/>} />
         <Route path='/P4' element={<P4/>} />
         <Route path='/ChatMain' element={<ChatMain/>} />
+        <Route path ='/Article' element={<Article/>}/>
       </Routes>
       <Footer/>
     </BrowserRouter>

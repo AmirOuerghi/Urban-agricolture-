@@ -11,6 +11,7 @@ import AssignmentIndIcon from '@mui/icons-material/AssignmentInd';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import InsightsIcon from '@mui/icons-material/Insights';
 import ChatIcon from '@mui/icons-material/Chat';
+import ArticleIcon from '@mui/icons-material/Article';
 
 export const Navbar = () => {
   const{getTotalCartItems}=useContext(ShopContext);
@@ -37,6 +38,8 @@ export const Navbar = () => {
           <li ><Link  style={{textDecoration:'none'}}to="/P4"className='test'> Statistics <InsightsIcon/> </Link></li> 
           <li ><Link  style={{textDecoration:'none'}}to="/login"className='test'>Login <LockOpenIcon/></Link></li> 
           <li ><Link  style={{textDecoration:'none'}}to="/ChatMain"className='test'>Chat <ChatIcon /></Link></li> 
+          <li ><Link  style={{textDecoration:'none'}}to="/Article"className='test'>Article <ArticleIcon /></Link></li> 
+
 
           <Link to='/cart'><img src={cart_icon} alt="" /></Link>
           <div className="nav-cart-count">{getTotalCartItems()}</div>
