@@ -44,13 +44,7 @@ const Home = () => {
           </Link>
         ))}
       </div>
-      {/* Render the footer with contact information */}
-      <footer className="footer">
-        <div className="contact-info">
-          <p>Phone: 123-456-7890</p>
-          <p>Email: info@example.com</p>
-        </div>
-      </footer>
+    
     </div>
   );
 };
