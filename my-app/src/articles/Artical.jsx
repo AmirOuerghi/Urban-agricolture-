@@ -3,6 +3,7 @@ import data from '../data/artical.json';
 import './artical.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus, faHeart } from '@fortawesome/free-solid-svg-icons';
+import Images from './Images'
 
 export default function Artical() {
   const [likes, setLikes] = useState({});
@@ -39,6 +40,7 @@ export default function Artical() {
   };
 
   return (
+    <>
     <div className="mainContainer">
       <div className="articlesContainer">
         <h1 className="articlesTitle">GOOD AGRICULTURAL PRACTICES</h1>
@@ -96,5 +98,10 @@ export default function Artical() {
         <FontAwesomeIcon icon={faPlus} />
       </div>
     </div>
+
+   
+      <Images/>
+  
+    </>
   );
 }
