@@ -48,13 +48,13 @@
 
 /* Main content styles */
 .main-content {
-    margin-left: 220px; /* Adjusted margin to accommodate sidebar */
+    margin-left: 180px; /* Adjusted margin to accommodate sidebar */
     padding: 20px;
 }
 
 /* Card styles */
 .card-container {
-    margin-top: 20px; /* Updated margin to accommodate sidebar */
+    margin-top: 40px; /* Updated margin to accommodate sidebar */
     display: flex;
     flex-wrap: wrap;
 }

@@ -16,7 +16,7 @@ const pages = [
   },
   {
     name: 'Landscaping Ideas',
-    image: 'https://www.familyhandyman.com/wp-content/uploads/2018/01/landscape-and-garden-design-feature.jpg',
+    image: 'https://www.familyhandyman.com/-/uploads/2018/01/landscape-and-garden-design-feature.jpg',
     description: 'Unlock the secrets to creating stunning outdoor spaces with inspiring landscaping ideas and design tips. Whether you’re revamping your backyard, planning a new garden layout, or enhancing your property’s curb appeal, this page provides a wealth of inspiration for transforming your outdoor environment. Discover creative landscape designs, learn about plant combinations and hardscape elements, and find practical advice for executing your landscaping projects with style and flair.',
     link: '/landscaping-ideas'
   }

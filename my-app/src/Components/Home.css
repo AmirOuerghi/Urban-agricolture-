@@ -2,10 +2,11 @@
 
 .home {
   padding: 20px;
-  background-image: url("https://dynamics.folio3.com/blog/wp-content/uploads/2021/07/shutterstock_1927630643.jpg");
+  background-image: url("file:///Users/user/Desktop/Urban-agricolture-/my-app/src/Components/Assets/image.png");
   background-repeat: no-repeat;
-  background-size:cover;
-  height: 1368px;
+  background-size: cover;
+  height: 1080px;
+  
 }
 
 .page-container {

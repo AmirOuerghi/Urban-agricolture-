@@ -42,7 +42,6 @@ function App() {
         <Route path='/ChatMain' element={<ChatMain/>} />
       </Routes>
       <Footer/>
-      
     </BrowserRouter>
   </div>
   );
