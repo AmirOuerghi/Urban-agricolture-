@@ -1,4 +1,10 @@
 /* Sidebar styles */
+.body {
+    background-image: url(https://upload.wikimedia.org/wikipedia/commons/0/08/Agricultural_machinery.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
 .sidebar {
     background-color: #34c4c3;
     padding: 20px;
