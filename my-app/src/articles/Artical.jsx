@@ -43,6 +43,7 @@ export default function Artical() {
     <>
     <div className="mainContainer">
       <div className="articlesContainer">
+        <h1 className="articlesTitle">GOOD AGRICULTURAL PRACTICES</h1>
         <div className="cardContainer">
           {data.map((item, index) => (
             <div className="cardItem" key={index}>

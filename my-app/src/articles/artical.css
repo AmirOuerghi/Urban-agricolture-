@@ -1,154 +1,146 @@
-
-/* @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap'); */
-
-
 .cardContainer {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-    margin-top: 150px; /* Adjust margin to create space between title and articles */
-  }
-  
-  .cardItem {
-    width: 345px;
-  }
-  
-  .card {
-    max-width: 345px;
-    background-color: #ffffff;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease-in-out;
-  }
-  
-  .card:hover {
-    transform: scale(1.05);
-  }
-  
-  .cardImage {
-    width: 100%;
-    height: 150px;
-    object-fit: cover;
-    border-top-left-radius: 8px;
-    border-top-right-radius: 8px;
-  }
-  
-  .cardContent {
-    padding: 16px;
-  }
-  
-  .cardTitle {
-    margin: 0;
-    font-size: 1.25rem;
-  }
-  
-  .cardDescription {
-    margin: 8px 0;
-  }
-  
-  .cardActions {
-    display: flex;
-    justify-content: flex-end;
-    padding: 0 16px 16px 16px;
-  }
-  
-  .cardButton {
-    border: none;
-    background-color: transparent;
-    color: #3f51b5;
-    cursor: pointer;
-  }
-  
-  .cardButton:hover {
-    text-decoration: underline;
-  }
-  
-  .heartIcon {
-    color: red;
-    font-size: 24px;
-  }
-  .articlesTitle {
-    text-align: center;
-    margin-top: 50px;
-    font-family: 'Bebas Neue', cursive;
-    font-size: 3em;
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    background-image: linear-gradient(gold, gold);
-    background-size: 100% 10px;
-    background-repeat: no-repeat;
-    background-position: 100% 0%;
-    transition: background-size .7s, background-position .5s ease-in-out;
-    z-index: 1; /* Set a higher z-index to ensure the title appears above other elements */
-  }
-  
-  .articlesTitle:hover {
-    background-size: 100% 100%;
-    background-position: 0% 100%;
-    transition: background-position .7s, background-size .5s ease-in-out;
-  }
-  
-  
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 200px; /* Adjust margin to reduce space between title and articles */
+}
+
+.cardItem {
+  flex: 1 1 400px; /* Adjust the width of each card item */
+}
+
+.card {
+  width: 100%; /* Ensure the card takes up the full width of the card item */
+  max-width: 345px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+  margin-left: 10%;
+}
 
 
+.card:hover {
+  transform: scale(1.05);
+}
 
-  
+.cardImage {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
 
-  /* artical.css */
-  .mainContainer {
-    display: flex;
-  }
-  
-  .articlesContainer {
-    flex-grow: 1;
-    padding-right: 20px;
-  }
-  
-  .addArticleForm {
-    position: absolute;
-    top: 50%;
-    right: 20px;
-    transform: translateY(-50%);
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .addArticleForm input {
-    margin-bottom: 10px;
-    width: 100%;
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-  }
-  
-  .addArticleIcon {
-    cursor: pointer;
-    color: #007bff;
-  }
-  
-  .toggleAddFormButton {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background-color: #007bff;
-    color: #fff;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    cursor: pointer;
-  }
-  
-  
+.cardContent {
+  padding: 16px;
+}
+
+.cardTitle {
+  margin: 0;
+  font-size: 1.25rem;
+}
+
+.cardDescription {
+  margin: 8px 0;
+}
+
+.cardActions {
+  display: flex;
+  justify-content: flex-end;
+  padding: 0 16px 16px 16px;
+}
+
+.cardButton {
+  border: none;
+  background-color: transparent;
+  color: #3f51b5;
+  cursor: pointer;
+}
+
+.cardButton:hover {
+  text-decoration: underline;
+}
+
+.heartIcon {
+  color: red;
+  font-size: 24px;
+}
+
+.articlesTitle {
+  text-align: center;
+  margin-top: 150px;
+  font-family: 'Bebas Neue', cursive;
+  font-size: 3em;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  background-image: linear-gradient(gold, gold);
+  background-size: 100% 10px;
+  background-repeat: no-repeat;
+  background-position: 100% 0%;
+  transition: background-size .7s, background-position .5s ease-in-out;
+  z-index: 1; /* Set a higher z-index to ensure the title appears above other elements */
+}
+
+.articlesTitle:hover {
+  background-size: 100% 100%;
+  background-position: 0% 100%;
+  transition: background-position .7s, background-size .5s ease-in-out;
+}
+
+/* artical.css */
+.mainContainer {
+  display: flex;
+}
+
+.articlesContainer {
+  flex-grow: 1;
+  padding-right: 20px;
+}
+
+.addArticleForm {
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.addArticleForm input {
+  margin-bottom: 10px;
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.addArticleIcon {
+  cursor: pointer;
+  color: #007bff;
+}
+
+.toggleAddFormButton {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #007bff;
+  color: #fff;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}

@@ -2,7 +2,7 @@ import React, { useState, useEffect,useContext } from 'react';
 import axios from 'axios';
 import Modal from 'react-modal';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faEdit, faTrashAlt, faSave, faTimes, faFileCirclePlus } from '@fortawesome/free-solid-svg-icons';
+import { faEdit, faTrashAlt, faSave, faTimes, faFileCirclePlus , faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 import './Plants.css';
 import { ShopContext } from '../ShopContext';
 import data from '../data/data.json'; 
@@ -36,12 +36,13 @@ function Plants() {
 
   const deletePlant = async (id) => {
     try {
-      await axios.delete(`http://localhost:8000/api/Plants/delete${id}`);
+      await axios.delete(`http://localhost:8000/api/Plants/${id}`);
       fetchPlants();
     } catch (error) {
       console.error('Error deleting plant:', error);
     }
   };
+  
 
   const updatePlant = async (id) => {
     try {
@@ -162,7 +163,7 @@ function Plants() {
               <h3 className="plant-name">{plant.Name}</h3>
               <p className="plant-size">Size: {plant.Size}</p>
               <p className="plant-price">Price: {plant.Price}</p>
-              <button onClick={()=>{addToCart(plant.id)}}> 🛒</button>
+              <FontAwesomeIcon icon={faShoppingCart} className="icon chart" onClick={() => addToCart(plant.id)} />
               {updateMode === plant.id && (
                 <Modal
                   isOpen={modalIsOpen[plant.id]}
