@@ -72,15 +72,15 @@
 .icon {
   cursor: pointer;
   margin-right: 20px; 
-  font-size: 2rem; 
+  font-size: 1.8rem; 
 }
 
 .edit {
-  color: blue; 
+  color: rgb(130, 130, 145); 
 }
 
 .delete {
-  color: red; 
+  color: rgb(60, 58, 31); 
 }
 
 .save {
@@ -89,6 +89,9 @@
 
 .cancel {
   color: gray;
+}
+.chart{
+  color :rgba(148, 71, 71, 0.5)
 }
 
 
@@ -104,12 +107,15 @@
   border: 1px solid #ccc;
   border-radius: 5px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  height: 800px; /* Adjust the height as needed */
 }
 
+
 .new-plant-form input {
-  margin-bottom: 10px;
-  width: 100%;
+  margin-bottom: 30px;
+  width: 90%;
   border-radius: 25px;
+  padding: 9px;
 }
 
 
@@ -124,6 +130,7 @@
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  margin-top: 100px;
 }
 
 .add-plant-button:hover {
@@ -134,7 +141,8 @@
   display: flex;
   justify-content: center;
   margin-bottom: 20px;
-  margin-top: 52px; /* Add margin bottom for spacing */
+  margin-top: 52px;
+  margin-right: 160px;
 }
 
 .search-input {
